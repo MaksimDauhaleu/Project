@@ -1,0 +1,77 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .user{
+            width: 15%;
+            height: auto;
+            border: 1px black solid;
+            display: inline-block;
+            margin: 20px;
+            padding: 10px;
+            
+        }
+        .user:hover{
+            -webkit-box-shadow: 0px 0px 52px -17px rgb(14, 11, 11);
+            -moz-box-shadow: 0px 0px 52px -17px rgb(24, 6, 6);
+            box-shadow: 0px 0px 52px -17px rgb(31, 14, 14);
+        }
+        p{
+            margin-bottom: 5px;
+        }
+        font{
+            font-weight: bolder;
+            color: black;
+        }
+        a{
+            color: black;
+        }
+        a:hover{
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                </tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%  for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.location }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>green</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body> -->
+    {%  for user in users %}
+    <div class="user" onclick="location.href = '/show/{{ user.id }}';">
+        <p>Name: <font>{{ user.first_name }} {{ user.last_name }}</font></p>
+        <p>Phone number: <font><a href="/">{{ user.phone_number }}</a></font></p>
+        <p>Location: <font>{{ user.location }}</font></p>              
+    </div>
+    {% endfor %}
+</html>
