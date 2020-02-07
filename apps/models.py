@@ -69,5 +69,3 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = LoginManager()
 
-    def __repr__(self):
-        return f"{self.first_name}{self.last_name}{self.email}{self.location}{self.phone_number}{self.password}"
