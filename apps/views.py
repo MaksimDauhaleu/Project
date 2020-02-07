@@ -15,6 +15,9 @@ def index(req):
     }
     return render(req,"index.html",context)
 
+def success(req):
+    return render(req,"success.html")
+
 def login(req):
     return render(req,"login.html")
 
@@ -38,7 +41,7 @@ def create_user(request):
             phone = request.POST['phone_number']
             pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
             user = User.objects.create(phone_number = phone ,on_call = False, first_name = first_name,last_name = last_name, email = email,location = location, password = pw_hash)
-            return redirect('/')
+            return redirect('/success')
 
 def user_login(request):
     if request.method == "POST":
