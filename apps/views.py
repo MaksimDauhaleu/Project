@@ -60,3 +60,11 @@ def show(req,id):
     user = User.objects.get(id = id)
     context = {'user' : user}
     return render(req,'show.html',context)
+
+
+def jobs(req):
+    jobs = Jobs.objects.all()
+    context = {
+        'jobs' : jobs
+    }
+    return render(req,'jobs.html',context)

@@ -69,3 +69,18 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = LoginManager()
 
+
+class Jobs(models.Model):
+    customer_first_name = models.CharField(max_length=20)
+    customer_last_name = models.CharField(max_length=20)
+    pick_up_address = models.CharField(max_length = 255)
+    drop_off_address = models.CharField(max_length = 255)
+    hourly_rate = models.IntegerField()
+    trucks_amount = models.IntegerField()
+    crew_amount = models.IntegerField()
+    job_time_estimate = models.TimeField()
+    services = models.CharField(max_length = 255)
+    materials = models.CharField(max_length = 255)
+    # Connections
+    users = models.ManyToManyField(User, related_name="jobs")
+    

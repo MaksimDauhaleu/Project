@@ -25,7 +25,7 @@ SECRET_KEY = '+y=ni*2bkli6$ea1xyi22_udfg^lus=#^cuutn_hif7knv$2*o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.191.10.88']
+ALLOWED_HOSTS = ['18.191.10.88','localhost','maks-projects.com']
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
